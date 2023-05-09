@@ -15,7 +15,7 @@
   position: relative;
 
   &__container {
-    width: 54rem;
+    width: 75rem;
     margin: 4.8rem auto;
     display: flex;
     align-items: center;
