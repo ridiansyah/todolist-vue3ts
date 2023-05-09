@@ -11,6 +11,7 @@
 <script lang="ts" setup>
 import { defineProps, defineEmits } from "vue";
 import CheckIcon from "@/assets/images/icon-check.svg";
+
 const props = defineProps({
   checked: {
     type: Boolean,
@@ -18,7 +19,6 @@ const props = defineProps({
   },
 });
 const emit = defineEmits(["update:checked"]);
-
 const handleCheck = (e: Event) => {
   if (e.target instanceof HTMLInputElement) {
     emit("update:checked", e.target.checked);
