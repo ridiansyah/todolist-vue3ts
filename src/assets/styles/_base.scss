@@ -1,0 +1,66 @@
+:root {
+  --color-checkbox: #ffa000;
+  --color-heading: #263238;
+
+  --font-family-heading: "Josefin Sans", sans-serif;
+  --font-weight-heading: 700;
+
+  --font-family-element: "Josefin Sans", sans-serif;
+  --font-weight-element: 400;
+}
+
+#app {
+  --color-background: #212121;
+  --color-element: #263238;
+  --color-border: #37474f;
+  --color-text: #ffffff;
+  --color-text-secondary: #bdbdbd;
+  --header-color: #ffa000;
+
+  --box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --box-shadow-lift: 0px 10px 30px -3px rgba(0, 0, 0, 0.3);
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: var(--font-family-element);
+  font-weight: var(--font-weight-element);
+  font-size: 62.5%;
+  line-height: 1.5;
+  box-sizing: border-box;
+  height: 100%;
+
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+a {
+  color: var(--color-theme-primary);
+}
+
+#app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-background);
+}
