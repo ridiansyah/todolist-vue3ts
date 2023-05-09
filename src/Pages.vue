@@ -16,7 +16,7 @@ import OBody from "./components/organisms/OBody.vue";
 .todo {
   &__container {
     z-index: 1;
-    width: 75rem;
+    width: var(--app-width);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
