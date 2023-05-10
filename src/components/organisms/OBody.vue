@@ -5,9 +5,6 @@
   <div class="todo__filters" v-if="todosAllCnt && breakpoint === 'sm'">
     <MFilters />
   </div>
-  <span class="todo__instruction" v-if="todosAllCnt"
-    >Drag and drop to reorder list</span
-  >
 </template>
 <script lang="ts" setup>
 import MInput from "../molecules/MInput.vue";
@@ -38,11 +35,6 @@ const { breakpoint } = useBreakpoints();
     justify-content: center;
     align-items: center;
     margin-bottom: 4rem;
-  }
-
-  &__instruction {
-    color: var(--color-text-secondary);
-    font-size: 1.6rem;
   }
 
   &__placeholder {
