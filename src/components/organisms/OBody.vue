@@ -1,8 +1,8 @@
 <template>
   <MInput />
-  <OList v-if="todosAllCnt" />
+  <OList v-if="todosAll" />
   <section v-else class="todo__placeholder">No Items</section>
-  <div class="todo__filters" v-if="todosAllCnt && breakpoint === 'sm'">
+  <div class="todo__filters" v-if="todosAll && breakpoint === 'sm'">
     <MFilters />
   </div>
 </template>
@@ -17,7 +17,7 @@ import useBreakpoints from "@/utils/useBreakpoints";
 
 const todosStore = useTodosStore();
 
-const { todosAllCnt } = storeToRefs(todosStore);
+const { todosAll } = storeToRefs(todosStore);
 
 const { breakpoint } = useBreakpoints();
 </script>

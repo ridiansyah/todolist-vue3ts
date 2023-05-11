@@ -20,17 +20,17 @@ export const useTodosStore = defineStore('todos', () => {
     return todos.value;
   });
 
-  const todosActiveCnt = computed<number>(() => {
+  const todosActive = computed<number>(() => {
     const actives = todos.value.filter((t) => !t.done);
     return actives.length;
   });
 
-  const todosCompletedCnt = computed<number>(() => {
+  const todosCompleted = computed<number>(() => {
     const cmps = todos.value.filter((t) => t.done);
     return cmps.length;
   });
 
-  const todosAllCnt = computed<number>(() => {
+  const todosAll = computed<number>(() => {
     return todos.value.length;
   });
 
@@ -72,9 +72,9 @@ export const useTodosStore = defineStore('todos', () => {
     todos,
     filter,
     todosDisplayed,
-    todosActiveCnt,
-    todosCompletedCnt,
-    todosAllCnt,
+    todosActive,
+    todosCompleted,
+    todosAll,
     addTodo,
     removeTodo,
     removeDoneTodos,

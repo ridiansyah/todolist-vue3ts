@@ -9,14 +9,14 @@
     <section v-else class="todo-list__placeholder">No Items</section>
     <div class="todo-list__footer">
       <div class="todo-list__item">
-        {{ todosActiveCnt }} item{{ todosActiveCnt > 1 ? "s" : "" }}
+        {{ todosActive }} item{{ todosActive > 1 ? "s" : "" }}
         left
       </div>
       <MFilters v-if="breakpoint !== 'sm'" />
       <div
         role="button"
         class="todo-list__item todo-list__btn"
-        :disabled="todosCompletedCnt === 0 || null"
+        :disabled="todosCompleted === 0 || null"
         @click="handleClearCompleted"
       >
         Clear Completed
@@ -35,8 +35,8 @@ import MFilters from "../molecules/MFilters.vue";
 const store = useTodosStore();
 const {
   todosDisplayed: todos,
-  todosActiveCnt,
-  todosCompletedCnt,
+  todosActive,
+  todosCompleted,
 } = storeToRefs(store);
 
 const { breakpoint } = useBreakpoints();
