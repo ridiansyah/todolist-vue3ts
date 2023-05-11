@@ -1,17 +1,17 @@
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 
-interface Todo {
+interface ITodo {
   id?: string;
   text: string;
   done: boolean;
 }
 
 export const useTodosStore = defineStore('todos', () => {
-  const todos = ref<Todo[]>([]);
+  const todos = ref<ITodo[]>([]);
   const filter = ref<string>("all");
 
-  const todosDisplayed = computed<Todo[]>(() => {
+  const todosDisplayed = computed<ITodo[]>(() => {
     if (filter.value === "active") {
       return todos.value.filter((t) => !t.done);
     } else if (filter.value === "completed") {
@@ -34,7 +34,7 @@ export const useTodosStore = defineStore('todos', () => {
     return todos.value.length;
   });
 
-  function addTodo(todo: Todo): void {
+  function addTodo(todo: ITodo): void {
     const id =
       Date.now().toString(36) + Math.random().toString(36).substr(2);
     todos.value.unshift({ ...todo, id });
@@ -52,12 +52,12 @@ export const useTodosStore = defineStore('todos', () => {
 
   function removeDoneTodos(): void {
     const dones = todos.value.filter((t) => t.done);
-    dones.forEach((t: Todo) => {
+    dones.forEach((t: ITodo) => {
       removeTodo(t.id);
     });
   }
 
-  function updateTodo(todoId: string, todo: Todo): void {
+  function updateTodo(todoId: string, todo: ITodo): void {
     const index = todos.value.findIndex((t) => t.id === todoId);
     if (index !== -1) {
       todos.value.splice(index, 1, { ...todo, ...todos.value[index] });
